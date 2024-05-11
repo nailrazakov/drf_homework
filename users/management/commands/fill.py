@@ -34,17 +34,17 @@ class Command(BaseCommand):
         for item in data:
             if item['model'] == 'users.user':
                 fields = item["fields"]
-                fields.pop('groups') # с этим полем TypeError: Direct assignment to the forward side of a many-to-many set is prohibited.
-                fields.pop('user_permissions') # с этим полем TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use user_permissions.set() instead.
+                fields.pop('groups') # с этим полем TypeError
+                fields.pop('user_permissions') # с этим полем TypeError
                 object_user = User(pk=item['pk'], **fields)
                 user_list.append(object_user)
                 user_dict[item['pk']] = object_user
-            elif item['model'] == 'models.course':
+            elif item['model'] == 'college.course':
                 object_course = Course(pk=item['pk'], **item["fields"])
                 course_list.append(object_course)
                 course_dict[item['pk']] = object_course
         for item in data:
-            if item['model'] == 'models.lesson':
+            if item['model'] == 'college.lesson':
                 fields = item["fields"]
                 key_course = fields.pop("course")
                 object_lesson = Lesson(pk=item['pk'], course=course_dict[key_course], **fields)
@@ -64,7 +64,7 @@ class Command(BaseCommand):
                 else:
                     lesson = lesson_dict[key_lesson]
                 key_user = fields.pop("user")
-                object_payments = Payments(course=course, lesson=lesson,
+                object_payments = Payments(pk=item['pk'], course=course, lesson=lesson,
                                            user=user_dict[key_user], **fields)
                 payments_list.append(object_payments)
         User.objects.bulk_create(user_list)

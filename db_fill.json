@@ -64,11 +64,11 @@
     "pk": 2,
     "fields": {
       "user": 4,
-      "date": "2024-05-08T18:53:47.571Z",
+      "date": "2024-05-08T18:53:47Z",
       "course": 2,
       "lesson": null,
       "amount": 1200,
-      "method": "nal"
+      "method": "non_cash"
     }
   },
   {
@@ -76,11 +76,11 @@
     "pk": 3,
     "fields": {
       "user": 4,
-      "date": "2024-05-08T18:54:25.609Z",
+      "date": "2024-05-08T18:54:25Z",
       "course": 1,
       "lesson": 3,
       "amount": 500,
-      "method": "bn"
+      "method": "non_cash"
     }
   },
   {
@@ -88,11 +88,11 @@
     "pk": 4,
     "fields": {
       "user": 4,
-      "date": "2024-05-08T18:54:55.736Z",
+      "date": "2024-05-08T18:54:55Z",
       "course": 1,
       "lesson": 9,
       "amount": 2000,
-      "method": "bn"
+      "method": "non_cash"
     }
   },
   {
@@ -100,11 +100,11 @@
     "pk": 5,
     "fields": {
       "user": 5,
-      "date": "2024-05-09T17:46:30.892Z",
+      "date": "2024-05-09T17:46:30Z",
       "course": null,
       "lesson": 11,
       "amount": 500,
-      "method": "nal"
+      "method": "cash"
     }
   },
   {
@@ -112,11 +112,11 @@
     "pk": 6,
     "fields": {
       "user": 5,
-      "date": "2024-05-09T17:47:06.880Z",
+      "date": "2024-05-09T17:47:06Z",
       "course": null,
       "lesson": 12,
       "amount": 500,
-      "method": "bn"
+      "method": "non_cash"
     }
   },
   {
@@ -124,11 +124,11 @@
     "pk": 7,
     "fields": {
       "user": 5,
-      "date": "2024-05-09T17:47:33.635Z",
+      "date": "2024-05-09T17:47:33Z",
       "course": null,
       "lesson": 10,
       "amount": 500,
-      "method": "nal"
+      "method": "cash"
     }
   },
   {
@@ -136,15 +136,27 @@
     "pk": 8,
     "fields": {
       "user": 5,
-      "date": "2024-05-09T17:48:13.805Z",
+      "date": "2024-05-09T17:48:13Z",
       "course": 2,
       "lesson": null,
       "amount": 10000,
-      "method": "bn"
+      "method": "non_cash"
     }
   },
   {
-    "model": "models.course",
+    "model": "users.payments",
+    "pk": 9,
+    "fields": {
+      "user": 3,
+      "date": "2024-05-11T10:54:18Z",
+      "course": 3,
+      "lesson": 11,
+      "amount": 15000,
+      "method": "non_cash"
+    }
+  },
+  {
+    "model": "college.course",
     "pk": 1,
     "fields": {
       "name": "Основы обеспечения информационной безопасности",
@@ -153,7 +165,7 @@
     }
   },
   {
-    "model": "models.course",
+    "model": "college.course",
     "pk": 2,
     "fields": {
       "name": "Основы программирования на языке Kotlin",
@@ -162,7 +174,7 @@
     }
   },
   {
-    "model": "models.course",
+    "model": "college.course",
     "pk": 3,
     "fields": {
       "name": "DjangoRESTframework",
@@ -171,7 +183,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 1,
     "fields": {
       "name": "Введение в Kotlin",
@@ -182,7 +194,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 2,
     "fields": {
       "name": "Основы языка Kotlin",
@@ -193,7 +205,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 3,
     "fields": {
       "name": "Классы и объекты",
@@ -204,7 +216,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 4,
     "fields": {
       "name": "Функции и лямбды",
@@ -215,7 +227,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 5,
     "fields": {
       "name": "Практическое использование Kotlin в Android-разработке",
@@ -226,7 +238,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 6,
     "fields": {
       "name": "Введение в Android разработку",
@@ -237,7 +249,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 7,
     "fields": {
       "name": "Элементы View",
@@ -248,7 +260,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 8,
     "fields": {
       "name": "Современные угрозы и модели каналов утечки информации",
@@ -259,7 +271,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 9,
     "fields": {
       "name": "Методы и средства обеспечения информационной безопасности",
@@ -270,7 +282,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 10,
     "fields": {
       "name": "Сериализаторы и фильтры",
@@ -281,7 +293,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 11,
     "fields": {
       "name": "Права доступа в DRF",
@@ -292,7 +304,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 12,
     "fields": {
       "name": "Валидаторы, пагинация и тесты",
@@ -303,7 +315,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 13,
     "fields": {
       "name": "Документирование и безопасность",
@@ -314,7 +326,7 @@
     }
   },
   {
-    "model": "models.lesson",
+    "model": "college.lesson",
     "pk": 14,
     "fields": {
       "name": "Celery",

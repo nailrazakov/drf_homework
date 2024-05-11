@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 from college.models import Course, Lesson
 
 
@@ -52,7 +53,7 @@ class Payments(models.Model):
         null=True,
         blank=True,
     )
-    date = models.DateTimeField(auto_now=True, verbose_name="Дата платежа")
+    date = models.DateTimeField(default=timezone.now, verbose_name="Дата платежа")
     course = models.ForeignKey(
         Course,
         on_delete=models.SET_NULL,
